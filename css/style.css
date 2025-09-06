@@ -125,12 +125,10 @@ table {
 
 th {
     background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
-    /* Flamengo colors */
     color: white;
     padding: 15px 10px;
     text-align: center;
     font-weight: bold;
-    /* Make sure the text is bold */
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -140,7 +138,6 @@ td {
     padding: 15px 10px;
     text-align: center;
     border-bottom: 1px solid #eee;
-    /* Lighten the border color */
     vertical-align: middle;
 }
 
