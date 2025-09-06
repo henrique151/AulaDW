@@ -1,133 +1,310 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Clube de Regatas do Flamengo - O Mais Querido</title>
+    <title>Central de Links - Flamengo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Intensificando o fundo preto com mais contraste */
+            background: linear-gradient(135deg, #000000 0%, #1a0000 100%);
+            color: white;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            /* Aumentando a intensidade do vermelho no header */
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(139, 0, 0, 0.1));
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid #dc143c;
+            padding: 2rem 0;
+            box-shadow: 0 4px 20px rgba(220, 20, 60, 0.3);
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            /* Aplicando gradiente vermelho mais vibrante */
+            background: linear-gradient(45deg, #dc143c, #ff1744, #c62828);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(220, 20, 60, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #f5f5f5;
+            margin-bottom: 1rem;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            /* Gradiente vermelho mais intenso no avatar */
+            background: linear-gradient(135deg, #dc143c, #ff1744, #8b0000);
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.5);
+            border: 3px solid #ffffff;
+            animation: flamengo-pulse 3s ease-in-out infinite;
+        }
+
+        .profile-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .profile-description {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #e0e0e0;
+            font-size: 1.1rem;
+        }
+
+        /* Links Grid */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 0;
+        }
+
+        .link-button {
+            /* Fundo mais escuro com borda vermelha mais forte */
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(220, 20, 60, 0.1));
+            border: 3px solid #dc143c;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            /* Efeito hover com vermelho mais vibrante */
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .link-button:hover::before {
+            left: 100%;
+        }
+
+        .link-button:hover {
+            transform: translateY(-5px);
+            /* Sombra vermelha mais intensa no hover */
+            box-shadow: 0 20px 50px rgba(220, 20, 60, 0.6);
+            border-color: #ff1744;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(0, 0, 0, 0.8));
+        }
+
+        .link-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .link-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .link-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            /* Título com vermelho mais vibrante */
+            color: #ff1744;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .link-description {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            /* Borda superior vermelha mais grossa */
+            border-top: 3px solid #dc143c;
+            margin-top: 3rem;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(220, 20, 60, 0.1));
+        }
+
+        footer p {
+            color: #e0e0e0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-avatar {
+                width: 100px;
+                height: 100px;
+                font-size: 3rem;
+            }
+        }
+
+        /* Adicionando mais elementos com tema Flamengo */
+        .flamengo-accent {
+            background: linear-gradient(45deg, #dc143c, #ff1744, #8b0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Animação sutil para elementos vermelhos */
+        @keyframes flamengo-pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(220, 20, 60, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(220, 20, 60, 0.6); }
+        }
+    </style>
 </head>
-
 <body>
-    <main>
-        <section>
-            <header>
-                <h1>Flamengo</h1>
-                <img src="./img/flamengo_braz_logo.png" alt="Escudo do Clube de Regatas do Flamengo">
-                <p>Clube de Regatas do Flamengo - O Mais Querido</p>
-            </header>
-        </section>
-
-        <section>
-            <h2>História do Flamengo</h2>
-            <p>O Clube de Regatas do Flamengo foi fundado em 17 de novembro de 1895, inicialmente para a prática de
-                remo. A seção de futebol foi criada em 1912, após uma divisão no Fluminense, tornando o Flamengo um
-                clube poliesportivo com grande destaque no futebol.</p>
-        </section>
-
-        <section>
-            <h3>Frases relacionadas ao time</h3>
-            <ol>
-                <li>Rubro-Negro</li>
-                <li>O Mais Querido</li>
-                <li>Urubu</li>
-            </ol>
-
-            <h3>Torcidas Organizadas</h3>
-            <ul>
-                <li>Torcida Jovem do Flamengo</li>
-                <li>Raça Rubro-Negra</li>
-                <li>Urubuzada</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Principais Títulos</h2>
-            <div class="flex-container">
-                <div class="flex-item">
-                    <i class="fa-solid fa-globe"></i>
-                    <h4>Mundial</h4>
-                    <p>1 Título</p>
-                </div>
-                <div class="flex-item">
-                    <i class="fa-solid fa-trophy"></i>
-                    <h4>Copa Libertadores</h4>
-                    <p>3 Títulos</p>
-                </div>
-                <div class="flex-item">
-                    <i class="fa-solid fa-trophy"></i>
-                    <h4>Campeonato Brasileiro</h4>
-                    <p>8 Títulos</p>
-                </div>
-                <div class="flex-item">
-                    <i class="fa-solid fa-trophy"></i>
-                    <h4>Copa do Brasil</h4>
-                    <p>5 Títulos</p>
-                </div>
-                <div class="flex-item">
-                    <i class="fa-solid fa-trophy"></i>
-                    <h4>Campeonato Carioca</h4>
-                    <p>39 Títulos</p>
-                </div>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Central de Links</h1>
+                <p class="subtitle">Todos os meus links importantes em um só lugar</p>
             </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <div class="profile-avatar">🔥</div>
+            <h2 class="profile-title">Olá! Bem-vindo ao meu hub de links</h2>
+            <p class="profile-description">
+                Aqui você encontra todos os meus perfis sociais, projetos e formas de contato. 
+                Clique nos botões abaixo para ser redirecionado para cada plataforma.
+            </p>
         </section>
 
-        <section>
-            <h2>Próximos Jogos</h2>
-            <table>
-                <tr>
-                    <th>Escudo do Clube</th>
-                    <th>Nome do Clube</th>
-                    <th>Tipo de Campeonato</th>
-                    <th>Próximo Jogo</th>
-                    <th>Horário</th>
-                    <th>Link do Site</th>
-                </tr>
-                <tr>
-                    <td><img src="./img/Escudo_do_Sport_Club_Internacional.png" alt="Escudo do Internacional"></td>
-                    <td>Sport Club Internacional</td>
-                    <td>Brasileirão Série A</td>
-                    <td>
-                        <p><time datetime="2025-08-17">17 de Agosto</time></p>
-                    </td>
-                    <td><data value="21:30">21:30</data></td>
-                    <td><a href="https://www.internacional.com.br/">Site do Internacional</a></td>
-                </tr>
-                <tr>
-                    <td><img src="./img/Escudo_do_Sport_Club_Internacional.png" alt="Escudo do Internacional"></td>
-                    <td>Sport Club Internacional</td>
-                    <td>Libertadores</td>
-                    <td>
-                        <p><time datetime="2025-08-20">20 de Agosto</time></p>
-                    </td>
-                    <td><data value="21:00">21:00</data></td>
-                    <td><a href="https://www.internacional.com.br/">Site do Internacional</a></td>
-                </tr>
-                <tr>
-                    <td><img src="img/Esporte_Clube_Vitória_logo.png" alt="Escudo do Vitória"></td>
-                    <td>Esporte Clube Vitória</td>
-                    <td>Brasileirão Série A</td>
-                    <td>
-                        <p><time datetime="2025-08-25">25 de Agosto</time></p>
-                    </td>
-                    <td><data value="21:00">21:00</data></td>
-                    <td><a href="https://www.lojasounego.com.br/">Site do Vitória</a></td>
-                </tr>
-                <tr>
-                    <td><img src="./img/gremio-logo-escudo-2.png" alt="Escudo do Grêmio"></td>
-                    <td>Grêmio Foot-Ball Porto Alegrense</td>
-                    <td>Brasileirão Série A</td>
-                    <td>
-                        <p><time datetime="2024-08-31">31 de Agosto</time></p>
-                    </td>
-                    <td><data value="16:00">16:00</data></td>
-                    <td><a href="https://gremio.net/">Site do Grêmio</a></td>
-                </tr>
-            </table>
+        <!-- Links Grid -->
+        <section class="links-grid">
+            <a href="https://portfolio.exemplo.com" class="link-button" target="_blank">
+                <div class="link-content">
+                    <span class="link-icon">🎨</span>
+                    <h3 class="link-title">Portfolio</h3>
+                    <p class="link-description">Veja meus projetos e trabalhos</p>
+                </div>
+            </a>
+
+            <a href="https://blog.exemplo.com" class="link-button" target="_blank">
+                <div class="link-content">
+                    <span class="link-icon">📝</span>
+                    <h3 class="link-title">Blog</h3>
+                    <p class="link-description">Artigos e tutoriais sobre desenvolvimento</p>
+                </div>
+            </a>
+
+            <a href="https://github.com/usuario" class="link-button" target="_blank">
+                <div class="link-content">
+                    <span class="link-icon">💻</span>
+                    <h3 class="link-title">GitHub</h3>
+                    <p class="link-description">Repositórios e código fonte</p>
+                </div>
+            </a>
+
+            <a href="https://linkedin.com/in/usuario" class="link-button" target="_blank">
+                <div class="link-content">
+                    <span class="link-icon">💼</span>
+                    <h3 class="link-title">LinkedIn</h3>
+                    <p class="link-description">Perfil profissional e networking</p>
+                </div>
+            </a>
+
+            <a href="https://youtube.com/@usuario" class="link-button" target="_blank">
+                <div class="link-content">
+                    <span class="link-icon">🎥</span>
+                    <h3 class="link-title">YouTube</h3>
+                    <p class="link-description">Canal com vídeos e tutoriais</p>
+                </div>
+            </a>
+
+            <a href="https://instagram.com/usuario" class="link-button" target="_blank">
+                <div class="link-content">
+                    <span class="link-icon">📸</span>
+                    <h3 class="link-title">Instagram</h3>
+                    <p class="link-description">Fotos e conteúdo visual</p>
+                </div>
+            </a>
+
+            <a href="https://twitter.com/usuario" class="link-button" target="_blank">
+                <div class="link-content">
+                    <span class="link-icon">🐦</span>
+                    <h3 class="link-title">Twitter</h3>
+                    <p class="link-description">Atualizações e pensamentos rápidos</p>
+                </div>
+            </a>
+
+            <a href="mailto:contato@exemplo.com" class="link-button">
+                <div class="link-content">
+                    <span class="link-icon">✉️</span>
+                    <h3 class="link-title">Email</h3>
+                    <p class="link-description">Entre em contato diretamente</p>
+                </div>
+            </a>
         </section>
     </main>
-</body>
 
+    <!-- Footer -->
+    <footer class="container">
+        <p>© 2024 Central de Links. Feito com ❤️</p>
+    </footer>
+</body>
 </html>
