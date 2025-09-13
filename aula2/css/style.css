@@ -179,11 +179,11 @@ data {
 }
 
 .flex-container {
-  display: flex; /* Ativa o contexto flexbox para os filhos diretos */
-  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-  justify-content: center; /* Centraliza os itens no eixo principal */
-  align-items: stretch; /* Faz com que todos os itens tenham a mesma altura */
-  gap: 15px; /* Adiciona um espaçamento de 15px entre os itens */
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  align-items: stretch; 
+  gap: 15px; 
   padding: 20px;
   border-radius: 10px;
   margin-top: 30px;
@@ -195,8 +195,8 @@ data {
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  flex-grow: 1; /* Permite que os itens cresçam para ocupar o espaço disponível */
-  min-width: 200px; /* Garante uma largura mínima antes de quebrar a linha */
+  flex-grow: 1; 
+  min-width: 200px; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
