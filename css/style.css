@@ -128,7 +128,14 @@
      color: #e0e0e0;
  }
 
- /* Responsive */
+ .flamengo-accent {
+     background: linear-gradient(45deg, #dc143c, #ff1744, #8b0000);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+ }
+
+  /* Responsive */
  @media (max-width: 768px) {
      h1 {
          font-size: 2.5rem;
@@ -143,12 +150,4 @@
          height: 100px;
          font-size: 3rem;
      }
- }
-
- /* Adicionando mais elementos com tema Flamengo */
- .flamengo-accent {
-     background: linear-gradient(45deg, #dc143c, #ff1744, #8b0000);
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-     background-clip: text;
  }
