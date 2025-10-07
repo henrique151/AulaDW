@@ -97,10 +97,6 @@ body {
   margin-bottom: 0;
 }
 
-.carousel-item {
-  height: 400px;
-}
-
 .carousel-item img {
   object-fit: cover;
   height: 100%;
@@ -148,7 +144,7 @@ body {
 }
 
 #categoryCarousel .card-body .img-container {
-  height: 150px; /* Altura fixa para o contêiner da imagem */
+  height: 150px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -156,9 +152,9 @@ body {
 }
 
 #categoryCarousel .card-body img {
-  max-height: 100%; /* Garante que a imagem não ultrapasse a altura do contêiner */
-  max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
-  object-fit: contain; /* Ajusta a imagem dentro do espaço sem distorcer */
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .card-link {
