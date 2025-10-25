@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #f2f2f2;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #2c2c2c;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  color: #e53935;
+  font-size: 2.5rem;
+}
+
+.input-container,
+.search-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 0.8rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333;
+  color: #f2f2f2;
+  font-size: 1rem;
+}
+
+input[type="text"]::placeholder {
+  color: #888;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #e53935;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c62828;
+}
+
+.task-columns {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.task-list {
+  flex: 1;
+  background-color: #333;
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+.task-list h2 {
+  color: #e53935;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e53935;
+  padding-bottom: 0.5rem;
+}
+
+.search-results h2 {
+  color: #e53935;
+  margin-bottom: 1rem;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #444;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.task-item span {
+    flex-grow: 1;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.task-buttons button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 3px;
+}
+
+.delete-btn {
+    background-color: #b71c1c; /* A darker red for delete */
+}
+
+.delete-btn:hover {
+    background-color: #8a1010;
+}
+
+.complete-btn {
+    background-color: #2e7d32; /* Green for complete */
+}
+
+.complete-btn:hover {
+    background-color: #1b5e20;
+}
+
+.uncomplete-btn {
+    background-color: #546e7a; /* Blue-grey for uncomplete */
+}
+
+.uncomplete-btn:hover {
+    background-color: #37474f;
+}
+
+#listaPequisa div {
+    background-color: #444;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}

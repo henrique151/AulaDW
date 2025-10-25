@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de Tarefas</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Lista de Tarefas</h1>
+        </header>
+        <div class="input-container">
+            <input type="text" id="inputValue" placeholder="Nova tarefa...">
+            <button onclick="adicionarTarefa()" id="adicionarTarefaID">Adicionar</button>
+        </div>
+        <div class="search-container">
+            <input type="text" id="inputPesquisa" placeholder="Pesquisar por categoria...">
+            <button onclick="pesquisaTarefa()" id="pesquisaTarefaID">Pesquisar</button>
+        </div>
+
+        <main class="task-columns">
+            <section class="task-list">
+                <h2>Tarefas Adicionadas</h2>
+                <div id="listaAdicionada">
+                    <!-- Tarefas adicionadas aqui -->
+                </div>
+            </section>
+            <section class="task-list">
+                <h2>Tarefas Concluídas</h2>
+                <div id="listaConcluidas">
+                    <!-- Tarefas concluídas aqui -->
+                </div>
+            </section>
+        </main>
+
+        <section class="search-results">
+            <h2>Resultado da Pesquisa</h2>
+            <div id="listaPequisa">
+                <!-- Resultados da pesquisa aqui -->
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
